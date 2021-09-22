@@ -1,1 +1,1 @@
-export const BASE_URL: string = 'https://fast-cashier-dj.herokuapp.com/api/'
+export const BASE_URL: string = 'http://localhost:8000/api/'
