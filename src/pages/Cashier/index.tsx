@@ -137,6 +137,7 @@ const Cashier = () => {
 
   const removeProductService = (index: number) => {
     setProducts(products.filter((item: { id: number }) => item.id !== index))
+    setProductsArrayToCreateOrder(products.filter((item: { id: number }) => item.id !== index))
   }
 
   const calculateTotal = () => {
