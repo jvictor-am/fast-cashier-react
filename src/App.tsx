@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// react imports
+import React from 'react'
 
-function App() {
+// third party imports
+import { Provider } from 'react-redux'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import 'semantic-ui-css/semantic.min.css'
+
+// project imports
+import GlobalStyle, { PageContainer } from './global_styles/global'
+import store from './store'
+import Routes from './routes'
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <PageContainer>
+        <Provider store={ store }>
+          <Routes />
+          <ToastContainer position='bottom-right' autoClose={2000} theme='dark' />
+        </Provider>
+        <GlobalStyle />
+      </PageContainer>
+    </>
+  )
 }
 
-export default App;
+export default App
